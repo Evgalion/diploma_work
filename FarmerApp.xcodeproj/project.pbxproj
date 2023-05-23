@@ -7,25 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181E7F4E2A1405EE00F23326 /* PickerValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E7F4D2A1405EE00F23326 /* PickerValues.swift */; };
 		185083FF2A03D2AB00BE0987 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185083FE2A03D2AB00BE0987 /* AppDelegate.swift */; };
 		185084012A03D2AB00BE0987 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185084002A03D2AB00BE0987 /* SceneDelegate.swift */; };
-		185084032A03D2AB00BE0987 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185084022A03D2AB00BE0987 /* ViewController.swift */; };
+		185084032A03D2AB00BE0987 /* EnterenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185084022A03D2AB00BE0987 /* EnterenceViewController.swift */; };
 		185084062A03D2AB00BE0987 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185084042A03D2AB00BE0987 /* Main.storyboard */; };
 		185084092A03D2AB00BE0987 /* FarmerApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 185084072A03D2AB00BE0987 /* FarmerApp.xcdatamodeld */; };
 		1850840B2A03D2AE00BE0987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1850840A2A03D2AE00BE0987 /* Assets.xcassets */; };
 		1850840E2A03D2AE00BE0987 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1850840C2A03D2AE00BE0987 /* LaunchScreen.storyboard */; };
+		1850841E2A09817E00BE0987 /* Farmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850841D2A09817E00BE0987 /* Farmer.swift */; };
+		185084202A09818D00BE0987 /* FRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850841F2A09818D00BE0987 /* FRequest.swift */; };
+		1871B0B72A0BBADD00E6A9D0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871B0B62A0BBADD00E6A9D0 /* RegisterViewController.swift */; };
+		1871B0B92A0BDE1F00E6A9D0 /* RequestCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871B0B82A0BDE1F00E6A9D0 /* RequestCreateViewController.swift */; };
+		1886A0922A0AD02500F47FB8 /* MyFarmerDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 1886A0912A0AD02500F47FB8 /* MyFarmerDB.sqlite */; };
+		18AED7312A0AE99D0003EB2C /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AED7302A0AE99D0003EB2C /* RequestTableViewCell.swift */; };
+		18AED7332A0AEE3B0003EB2C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AED7322A0AEE3B0003EB2C /* MainViewController.swift */; };
+		18CA070C2A1555FC00F85628 /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA070B2A1555FC00F85628 /* PDFCreator.swift */; };
+		18CA070E2A15587300F85628 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA070D2A15587300F85628 /* PDFViewController.swift */; };
+		18CA07102A182BF500F85628 /* CertificateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA070F2A182BF500F85628 /* CertificateManager.swift */; };
+		18CA07122A1AA44A00F85628 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA07112A1AA44A00F85628 /* LogManager.swift */; };
+		18E04BBF2A09A5D400571E31 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 18E04BBE2A09A5D400571E31 /* Podfile */; };
+		FEC55E1A5B82644E5B6AAF7F /* libPods-FarmerApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 786E279A511070DF3045B4C2 /* libPods-FarmerApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181E7F4D2A1405EE00F23326 /* PickerValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerValues.swift; sourceTree = "<group>"; };
 		185083FB2A03D2AB00BE0987 /* FarmerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarmerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185083FE2A03D2AB00BE0987 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		185084002A03D2AB00BE0987 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		185084022A03D2AB00BE0987 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		185084022A03D2AB00BE0987 /* EnterenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterenceViewController.swift; sourceTree = "<group>"; };
 		185084052A03D2AB00BE0987 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		185084082A03D2AB00BE0987 /* FarmerApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FarmerApp.xcdatamodel; sourceTree = "<group>"; };
 		1850840A2A03D2AE00BE0987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1850840D2A03D2AE00BE0987 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1850840F2A03D2AE00BE0987 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1850841D2A09817E00BE0987 /* Farmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Farmer.swift; sourceTree = "<group>"; };
+		1850841F2A09818D00BE0987 /* FRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRequest.swift; sourceTree = "<group>"; };
+		1871B0B62A0BBADD00E6A9D0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		1871B0B82A0BDE1F00E6A9D0 /* RequestCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCreateViewController.swift; sourceTree = "<group>"; };
+		1886A0912A0AD02500F47FB8 /* MyFarmerDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyFarmerDB.sqlite; sourceTree = "<group>"; };
+		18AED7302A0AE99D0003EB2C /* RequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
+		18AED7322A0AEE3B0003EB2C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		18CA070B2A1555FC00F85628 /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
+		18CA070D2A15587300F85628 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		18CA070F2A182BF500F85628 /* CertificateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateManager.swift; sourceTree = "<group>"; };
+		18CA07112A1AA44A00F85628 /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
+		18E04BBE2A09A5D400571E31 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		54E03859D99E1FF3B1B9E427 /* Pods-FarmerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FarmerApp.debug.xcconfig"; path = "Target Support Files/Pods-FarmerApp/Pods-FarmerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		786E279A511070DF3045B4C2 /* libPods-FarmerApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FarmerApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E34DB753102FC7392426A556 /* Pods-FarmerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FarmerApp.release.xcconfig"; path = "Target Support Files/Pods-FarmerApp/Pods-FarmerApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEC55E1A5B82644E5B6AAF7F /* libPods-FarmerApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,8 +73,13 @@
 		185083F22A03D2AB00BE0987 = {
 			isa = PBXGroup;
 			children = (
+				18AED72F2A0AE96D0003EB2C /* ViewElem */,
+				1886A0902A0ACFFC00F47FB8 /* res */,
+				18E04BBE2A09A5D400571E31 /* Podfile */,
 				185083FD2A03D2AB00BE0987 /* FarmerApp */,
 				185083FC2A03D2AB00BE0987 /* Products */,
+				4264DD6203B5FCA94E5BD118 /* Pods */,
+				5682535CE3271FF61A186462 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,14 +96,81 @@
 			children = (
 				185083FE2A03D2AB00BE0987 /* AppDelegate.swift */,
 				185084002A03D2AB00BE0987 /* SceneDelegate.swift */,
-				185084022A03D2AB00BE0987 /* ViewController.swift */,
-				185084042A03D2AB00BE0987 /* Main.storyboard */,
+				1850841A2A03DCA100BE0987 /* Model */,
+				185084192A03DC9200BE0987 /* ViewController */,
+				185084182A03DC8200BE0987 /* View */,
 				1850840A2A03D2AE00BE0987 /* Assets.xcassets */,
 				1850840C2A03D2AE00BE0987 /* LaunchScreen.storyboard */,
 				1850840F2A03D2AE00BE0987 /* Info.plist */,
 				185084072A03D2AB00BE0987 /* FarmerApp.xcdatamodeld */,
 			);
 			path = FarmerApp;
+			sourceTree = "<group>";
+		};
+		185084182A03DC8200BE0987 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				185084042A03D2AB00BE0987 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		185084192A03DC9200BE0987 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				185084022A03D2AB00BE0987 /* EnterenceViewController.swift */,
+				18AED7322A0AEE3B0003EB2C /* MainViewController.swift */,
+				1871B0B62A0BBADD00E6A9D0 /* RegisterViewController.swift */,
+				1871B0B82A0BDE1F00E6A9D0 /* RequestCreateViewController.swift */,
+				18CA070D2A15587300F85628 /* PDFViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1850841A2A03DCA100BE0987 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1850841D2A09817E00BE0987 /* Farmer.swift */,
+				1850841F2A09818D00BE0987 /* FRequest.swift */,
+				181E7F4D2A1405EE00F23326 /* PickerValues.swift */,
+				18CA070B2A1555FC00F85628 /* PDFCreator.swift */,
+				18CA070F2A182BF500F85628 /* CertificateManager.swift */,
+				18CA07112A1AA44A00F85628 /* LogManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1886A0902A0ACFFC00F47FB8 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				1886A0912A0AD02500F47FB8 /* MyFarmerDB.sqlite */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
+		18AED72F2A0AE96D0003EB2C /* ViewElem */ = {
+			isa = PBXGroup;
+			children = (
+				18AED7302A0AE99D0003EB2C /* RequestTableViewCell.swift */,
+			);
+			path = ViewElem;
+			sourceTree = "<group>";
+		};
+		4264DD6203B5FCA94E5BD118 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				54E03859D99E1FF3B1B9E427 /* Pods-FarmerApp.debug.xcconfig */,
+				E34DB753102FC7392426A556 /* Pods-FarmerApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5682535CE3271FF61A186462 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				786E279A511070DF3045B4C2 /* libPods-FarmerApp.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +180,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 185084122A03D2AE00BE0987 /* Build configuration list for PBXNativeTarget "FarmerApp" */;
 			buildPhases = (
+				19660A741D4A4EDCD2D3F0BE /* [CP] Check Pods Manifest.lock */,
 				185083F72A03D2AB00BE0987 /* Sources */,
 				185083F82A03D2AB00BE0987 /* Frameworks */,
 				185083F92A03D2AB00BE0987 /* Resources */,
@@ -128,6 +232,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E04BBF2A09A5D400571E31 /* Podfile in Resources */,
+				1886A0922A0AD02500F47FB8 /* MyFarmerDB.sqlite in Resources */,
 				1850840E2A03D2AE00BE0987 /* LaunchScreen.storyboard in Resources */,
 				1850840B2A03D2AE00BE0987 /* Assets.xcassets in Resources */,
 				185084062A03D2AB00BE0987 /* Main.storyboard in Resources */,
@@ -136,15 +242,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		19660A741D4A4EDCD2D3F0BE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FarmerApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		185083F72A03D2AB00BE0987 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1871B0B92A0BDE1F00E6A9D0 /* RequestCreateViewController.swift in Sources */,
+				1871B0B72A0BBADD00E6A9D0 /* RegisterViewController.swift in Sources */,
 				185084092A03D2AB00BE0987 /* FarmerApp.xcdatamodeld in Sources */,
-				185084032A03D2AB00BE0987 /* ViewController.swift in Sources */,
+				18CA070E2A15587300F85628 /* PDFViewController.swift in Sources */,
+				18AED7312A0AE99D0003EB2C /* RequestTableViewCell.swift in Sources */,
+				185084032A03D2AB00BE0987 /* EnterenceViewController.swift in Sources */,
+				18CA07122A1AA44A00F85628 /* LogManager.swift in Sources */,
+				18CA07102A182BF500F85628 /* CertificateManager.swift in Sources */,
+				18CA070C2A1555FC00F85628 /* PDFCreator.swift in Sources */,
+				1850841E2A09817E00BE0987 /* Farmer.swift in Sources */,
 				185083FF2A03D2AB00BE0987 /* AppDelegate.swift in Sources */,
+				181E7F4E2A1405EE00F23326 /* PickerValues.swift in Sources */,
+				185084202A09818D00BE0987 /* FRequest.swift in Sources */,
 				185084012A03D2AB00BE0987 /* SceneDelegate.swift in Sources */,
+				18AED7332A0AEE3B0003EB2C /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +428,7 @@
 		};
 		185084132A03D2AE00BE0987 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54E03859D99E1FF3B1B9E427 /* Pods-FarmerApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -313,6 +456,7 @@
 		};
 		185084142A03D2AE00BE0987 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E34DB753102FC7392426A556 /* Pods-FarmerApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
