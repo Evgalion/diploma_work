@@ -36,10 +36,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        // Открываем лог файл.
-        _ = getFarmer()
-        
-        myLogger = LogManager(MyFarmer!.phone_number)
+       
         
         
         
@@ -55,7 +52,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
              // Добавляем жест распознавания к таблице
         requestTableView.addGestureRecognizer(tapGestureRecognizer)
         
-        
+
     }
     
     @objc func handleDoubleTap(_ gestureRecognizer: UITapGestureRecognizer) {
@@ -90,7 +87,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
            filterButton.setTitle(currentFilter, for: .normal)
         
         myLogger?.log("Меняем сортировку предложений на \(currentFilter)")
-
+        
+        if let unwrappedString = myLogger?.getLogHistory() {
+            print(unwrappedString)
+        } else {
+            print("Строка має значення nil.")
+        }
     }
     
     
@@ -134,6 +136,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         choosedRequest = requests[indexPath.row]
+        // Открываем лог файл.
+        _ = getFarmer()
+        myLogger = LogManager(MyFarmer!.phone_number)
         }
     
     
@@ -207,11 +212,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if(selectedRequest.status == filters[1])
         {
             let url = URL(string: "https://example.com/api/data")!
-            
+            myLogger?.log("Инициализируем наш api url = \(url)")
             var request = URLRequest(url: url)
             request.httpMethod = "PUT"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            
+            myLogger?.log("Cоздали запрос типа \(request.httpMethod)")
             let jsonData = try? JSONEncoder().encode(["selectedRequest": selectedRequest])
             
             
@@ -222,6 +227,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     print("Error: \(error?.localizedDescription ?? "Unknown error")")
                     return
                 }
+               
                 self.updateRequestStatus(selectedRequest,status: self.filters[2])
                 
                 if response.statusCode == 200 {
@@ -230,6 +236,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 } else {
                     print("Server error: \(response.statusCode)")
                 }
+                self.myLogger?.log("Спробывали отправить json. Ответ сервера = \(response.statusCode)")
             }
             
             task.resume()
@@ -280,11 +287,15 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 farmers.append(Farmer(id: row[0], first_name: row[1], second_name: row[2], phone_number: row[3], password: row[4], main_address: row[5], farm_size: row[6]))
             }
         }
-        MyFarmer = farmers.first!
-        data_farmer = "\(farmers[0].first_name) \(farmers[0].second_name). Живущий за адрессом \(farmers[0].main_address)"
         
+       
+        data_farmer = "\(farmers[0].first_name) \(farmers[0].second_name). Живущий за адрессом \(farmers[0].main_address)"
+        self.MyFarmer = farmers[0]
         return data_farmer
     }
+    
+
+
     
     
     

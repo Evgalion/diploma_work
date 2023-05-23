@@ -61,7 +61,9 @@ class LogManager {
         do {
             // Прочитайте содержимое файла логов
             let logContent = try String(contentsOf: logFileURL, encoding: .utf8)
-            return logContent
+            var logContent_last = "\r <----История логов ----> \r\n\n"
+            logContent_last += logContent
+            return logContent_last
         } catch {
             return "Ошибка при чтении файла логов"
         }
