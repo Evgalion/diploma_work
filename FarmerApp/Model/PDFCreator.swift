@@ -27,6 +27,19 @@ struct PDFCreator {
            
            return fileURL
        }
+    static func generatePDFFileURL( _ logname: String) -> URL? {
+        
+        let fileName = "document_log_history_\(logname)" // Генерируем имя файла на основе индекса ячейки
+           
+           // Получаем путь к директории документов в приложении
+           guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+               return nil
+           }
+           // Создаем полный URL-адрес файла с использованием директории документов и имени файла
+           let fileURL = documentsDirectory.appendingPathComponent(fileName).appendingPathExtension("pdf")
+           
+           return fileURL
+       }
     
     static func openPDFFile(at fileURL: URL, from viewController: UIViewController, _ data:Frequest, _ data_f:String) {
         let documentViewController = PDFViewController(url: fileURL,additionalData: data,creator_name: data_f )
@@ -34,6 +47,15 @@ struct PDFCreator {
         navigationController.modalPresentationStyle = .currentContext
         viewController.present(navigationController, animated: true, completion: nil)
     }
+
+    // Редачим
+    static func openPDFLoggerHistory(at fileURL: URL, from viewController: UIViewController, _ log_data:String ) {
+        let documentViewController =  PDFLoggerViewController(url: fileURL, additionalData: log_data)
+        let navigationController = UINavigationController(rootViewController: documentViewController)
+        navigationController.modalPresentationStyle = .currentContext
+        viewController.present(navigationController, animated: true, completion: nil)
+    }
+    
     
     
     func createFlyer() -> Data {
@@ -46,7 +68,7 @@ struct PDFCreator {
       
       // 2
       let pageWidth = 8.5 * 72.0
-      let pageHeight = 11 * 72.0
+      let pageHeight = 14 * 72.0
       let pageRect = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
       
       // 3
@@ -57,6 +79,7 @@ struct PDFCreator {
         context.beginPage()
         // 6
         let titleBottom = addTitle(pageRect: pageRect)
+//        let attributedText = NSAttributedString(string: body, attributes: textAttributes)
         addBodyText(pageRect: pageRect, textTop: titleBottom + 18.0 + 18.0)
       }
       

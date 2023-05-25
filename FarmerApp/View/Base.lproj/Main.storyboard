@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -282,16 +283,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7IW-k8-NXy" userLabel="Request Table View">
-                                <rect key="frame" x="16" y="99" width="361" height="632"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7IW-k8-NXy" userLabel="Request Table View">
+                                <rect key="frame" x="15" y="101.66666666666669" width="363" height="635.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="haZ-5T-Ayv" customClass="RequestTableViewCell" customModule="FarmerApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="361" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                        <rect key="frame" x="0.0" y="50" width="363" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="haZ-5T-Ayv" id="a7w-fz-qA8">
-                                            <rect key="frame" x="0.0" y="0.0" width="361" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="363" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="uDO-pL-sh9">
@@ -320,13 +320,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IfV-xk-n8K">
-                                <rect key="frame" x="20" y="773.33333333333337" width="353" height="29.666666666666629"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IfV-xk-n8K">
+                                <rect key="frame" x="15" y="61.999999999999993" width="363" height="25.666666666666664"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vn-eN-ayA">
-                                        <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="29.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="83.333333333333329" height="25.666666666666668"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Загрузить">
+                                        <buttonConfiguration key="configuration" style="filled" title="Обновить" buttonSize="small">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -334,9 +334,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejp-aH-nXZ">
-                                        <rect key="frame" x="124.33333333333334" y="0.0" width="104.33333333333334" height="29.666666666666668"/>
+                                        <rect key="frame" x="93.333333333333343" y="0.0" width="83.333333333333343" height="25.666666666666668"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Добавить">
+                                        <buttonConfiguration key="configuration" style="filled" title="Добавить" buttonSize="small">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -344,42 +344,61 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPi-n4-Z9w">
-                                        <rect key="frame" x="248.66666666666671" y="0.0" width="104.33333333333334" height="29.666666666666668"/>
+                                        <rect key="frame" x="186.66666666666666" y="0.0" width="82.999999999999972" height="25.666666666666668"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Отправить">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Отправить" buttonSize="small">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="sendButtonPressed:" destination="8Ar-GC-cng" eventType="touchUpInside" id="SVF-Dx-dnH"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhH-Ad-hpA">
+                                        <rect key="frame" x="279.66666666666669" y="0.0" width="83.333333333333314" height="25.666666666666668"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Мой Лог" buttonSize="small">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="logButtonPressed:" destination="8Ar-GC-cng" eventType="touchUpInside" id="S99-3v-ldl"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVp-Z1-BN6">
-                                <rect key="frame" x="20" y="38" width="117" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                <color key="tintColor" systemColor="labelColor"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title=" Все" image="tray.2" catalog="system">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="changedFilterButton:" destination="8Ar-GC-cng" eventType="touchUpInside" id="qAO-hB-n01"/>
-                                </connections>
-                            </button>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lHA-rF-uC2">
+                                <rect key="frame" x="16" y="773" width="361" height="49"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="7v8-q2-ccH"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem title="Все" image="oval" catalog="system" id="8F8-dT-va9"/>
+                                    <tabBarItem tag="1" title="Подготовлен" image="circle" catalog="system" selectedImage="circle" id="peV-59-lDq"/>
+                                    <tabBarItem tag="2" title="Обрабатывается" image="shield" catalog="system" selectedImage="archivebox" id="0HF-GD-Ivq"/>
+                                    <tabBarItem tag="3" title="Завершён" image="archivebox" catalog="system" selectedImage="archivebox" id="52t-OD-Oih"/>
+                                </items>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedImageTintColor" name="AccentColor"/>
+                            </tabBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pwc-s8-08c"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pwc-s8-08c" firstAttribute="trailing" secondItem="IfV-xk-n8K" secondAttribute="trailing" constant="20" id="6GV-jE-GPs"/>
-                            <constraint firstItem="pwc-s8-08c" firstAttribute="bottom" secondItem="IfV-xk-n8K" secondAttribute="bottom" constant="39" id="kOF-XY-5tK"/>
-                            <constraint firstItem="IfV-xk-n8K" firstAttribute="leading" secondItem="pwc-s8-08c" secondAttribute="leading" constant="20" id="oEr-Zh-vhv"/>
+                            <constraint firstItem="lHA-rF-uC2" firstAttribute="centerX" secondItem="IfV-xk-n8K" secondAttribute="centerX" id="2Qo-nc-xEy"/>
+                            <constraint firstItem="7IW-k8-NXy" firstAttribute="top" secondItem="IfV-xk-n8K" secondAttribute="bottom" constant="14" id="3gv-td-XM3"/>
+                            <constraint firstItem="pwc-s8-08c" firstAttribute="trailing" secondItem="IfV-xk-n8K" secondAttribute="trailing" constant="15" id="6GV-jE-GPs"/>
+                            <constraint firstItem="IfV-xk-n8K" firstAttribute="top" secondItem="pwc-s8-08c" secondAttribute="top" constant="62" id="DfT-Yy-ezV"/>
+                            <constraint firstItem="lHA-rF-uC2" firstAttribute="leading" secondItem="0nB-DN-5lb" secondAttribute="leadingMargin" id="Si6-WX-E33"/>
+                            <constraint firstItem="lHA-rF-uC2" firstAttribute="centerX" secondItem="7IW-k8-NXy" secondAttribute="centerX" id="W1h-kJ-OzL"/>
+                            <constraint firstItem="pwc-s8-08c" firstAttribute="trailing" secondItem="7IW-k8-NXy" secondAttribute="trailing" constant="15" id="jM4-td-Xyf"/>
+                            <constraint firstItem="IfV-xk-n8K" firstAttribute="leading" secondItem="pwc-s8-08c" secondAttribute="leading" constant="15" id="oEr-Zh-vhv"/>
+                            <constraint firstItem="lHA-rF-uC2" firstAttribute="top" secondItem="7IW-k8-NXy" secondAttribute="bottom" constant="36" id="tkB-g2-QoR"/>
+                            <constraint firstItem="pwc-s8-08c" firstAttribute="bottom" secondItem="lHA-rF-uC2" secondAttribute="bottom" constant="20" id="w3O-lz-cQp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HEW-AD-8zK"/>
                     <connections>
-                        <outlet property="filterButton" destination="CVp-Z1-BN6" id="tsB-CF-EDo"/>
+                        <outlet property="myTabBar" destination="lHA-rF-uC2" id="DUN-X0-v6b"/>
                         <outlet property="requestTableView" destination="7IW-k8-NXy" id="hYC-un-Hbv"/>
                         <segue destination="RKm-F1-PrV" kind="presentation" identifier="goToAddRequest" id="wPY-g0-XP9"/>
                     </connections>
@@ -554,9 +573,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="archivebox" catalog="system" width="128" height="107"/>
+        <image name="circle" catalog="system" width="128" height="123"/>
+        <image name="oval" catalog="system" width="128" height="96"/>
         <image name="registre_background" width="375" height="812"/>
         <image name="result_background" width="375" height="812"/>
-        <image name="tray.2" catalog="system" width="128" height="115"/>
+        <image name="shield" catalog="system" width="128" height="121"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

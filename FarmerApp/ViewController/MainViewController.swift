@@ -10,7 +10,7 @@ import UIKit
 import GRDB
 
 
-class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITabBarDelegate {
    
     private var myLogger: LogManager?
     public var dbQueue: DatabaseQueue?
@@ -23,7 +23,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var requestTableView: UITableView!
     
-    @IBOutlet weak var filterButton: UIButton!
+    
+    @IBOutlet weak var myTabBar: UITabBar!
     
     private var requests: [Frequest] = []
     
@@ -36,14 +37,16 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         
         super.viewDidLoad()
-       
         
+        // Установить индекс выбранной вкладки
+        myTabBar.selectedItem = myTabBar.items?[0]
         
         
         loadData("Все")
         myLogger?.log("Загружаєм все предложения")
         requestTableView.delegate = self
         requestTableView.dataSource = self
+        myTabBar.delegate = self
         
         // Создаем жест распознавания двойного нажатия
         tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
@@ -52,7 +55,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
              // Добавляем жест распознавания к таблице
         requestTableView.addGestureRecognizer(tapGestureRecognizer)
         
-
+        // Открываем лог файл.
+        _ = getFarmer()
+        myLogger = LogManager(MyFarmer!.phone_number)
     }
     
     @objc func handleDoubleTap(_ gestureRecognizer: UITapGestureRecognizer) {
@@ -77,24 +82,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     
-    @IBAction func changedFilterButton(_ sender: UIButton) {
-        
-        
-        // Изменение текста кнопки на следующий фильтр
-           countFilter = (countFilter + 1) % filters.count // Инкремент индекса фильтра с учетом границы массива
-           let currentFilter = filters[countFilter]
-        
-           filterButton.setTitle(currentFilter, for: .normal)
-        
-        myLogger?.log("Меняем сортировку предложений на \(currentFilter)")
-        
-        if let unwrappedString = myLogger?.getLogHistory() {
-            print(unwrappedString)
-        } else {
-            print("Строка має значення nil.")
-        }
-    }
-    
+   
     
     
     // MARK: Settings TableView
@@ -136,9 +124,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         choosedRequest = requests[indexPath.row]
-        // Открываем лог файл.
-        _ = getFarmer()
-        myLogger = LogManager(MyFarmer!.phone_number)
+
         }
     
     
@@ -281,7 +267,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var data_farmer:String
         var farmers: [Farmer] = []
         try? dbQueue?.read { db in
-            let rows = try Row.fetchAll(db, sql: "SELECT * FROM Farmer where id = ?",arguments: [choosedRequest?.farmer_id])
+            let rows = try Row.fetchAll(db, sql: "SELECT * FROM Farmer where id = ?",arguments: [farmerID])
             
             for row in rows {
                 farmers.append(Farmer(id: row[0], first_name: row[1], second_name: row[2], phone_number: row[3], password: row[4], main_address: row[5], farm_size: row[6]))
@@ -296,10 +282,41 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
 
 
-    
-    
-    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        // Обработка выбора вкладки
+        countFilter = item.tag
         
+        loadData(filters[countFilter])
+         // Инкремент индекса фильтра с учетом границы массива
+        let currentFilter = filters[countFilter]
+    
+     
+     myLogger?.log("Меняем сортировку предложений на \(currentFilter)")
+     
+     if let unwrappedString = myLogger?.getLogHistory() {
+         print(unwrappedString)
+     } else {
+         print("Строка має значення nil.")
+     }
+        
+    }
+    
+    
+    
+    @IBAction func logButtonPressed(_ sender: UIButton) {
+        
+   
+        // Обработка двойного нажатия на ячейку
+        myLogger?.log("Загружаєм пдф файл для истории логера")
+        
+        if let tmpString = myLogger?.getLogFileName()
+        {
+            
+            if let fileURL = PDFCreator.generatePDFFileURL(tmpString) {
+                PDFCreator.openPDFLoggerHistory(at: fileURL, from: self, (myLogger?.getLogHistory())!)
+            }
+        }
+    }
         
 }
     

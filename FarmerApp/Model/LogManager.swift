@@ -68,4 +68,9 @@ class LogManager {
             return "Ошибка при чтении файла логов"
         }
     }
+    
+    func getLogFileName() -> String
+    {
+        return logFileName
+    }
 }
