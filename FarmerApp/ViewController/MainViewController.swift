@@ -182,6 +182,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             ReqCreateVC.farmerID = farmerID
             ReqCreateVC.dbQueue = dbQueue
         }
+        else if segue.identifier == "goToMyLog"
+        {
+            let LogVC :LoggerViewController = segue.destination as! LoggerViewController
+            
+            LogVC.log_data = myLogger?.getLogHistory()
+            
+        }
     }
     
    
@@ -312,9 +319,14 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if let tmpString = myLogger?.getLogFileName()
         {
             
-            if let fileURL = PDFCreator.generatePDFFileURL(tmpString) {
-                PDFCreator.openPDFLoggerHistory(at: fileURL, from: self, (myLogger?.getLogHistory())!)
-            }
+            self.performSegue(withIdentifier: "goToMyLog", sender: self)
+            
+            
+//            if let fileURL = PDFCreator.generatePDFFileURL(tmpString) {
+//                PDFCreator.openPDFLoggerHistory(at: fileURL, from: self, (myLogger?.getLogHistory())!)
+//            }
+            
+            
         }
     }
         

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Foundation
 import UIKit
 import PDFKit
 
@@ -83,10 +82,6 @@ class PDFLoggerViewController: UIViewController {
  
             pdfView.document = PDFDocument(data: pdfCreator.createFlyer())
         }
-    
-  
-    
-    
     
     
     @objc private func closeButtonTapped() {

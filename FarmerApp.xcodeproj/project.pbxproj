@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181B4EFC2A20F95400DB8703 /* LoggerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B4EFB2A20F95400DB8703 /* LoggerViewController.swift */; };
 		181E7F4E2A1405EE00F23326 /* PickerValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E7F4D2A1405EE00F23326 /* PickerValues.swift */; };
 		185083FF2A03D2AB00BE0987 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185083FE2A03D2AB00BE0987 /* AppDelegate.swift */; };
 		185084012A03D2AB00BE0987 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185084002A03D2AB00BE0987 /* SceneDelegate.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181B4EFB2A20F95400DB8703 /* LoggerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerViewController.swift; sourceTree = "<group>"; };
 		181E7F4D2A1405EE00F23326 /* PickerValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerValues.swift; sourceTree = "<group>"; };
 		185083FB2A03D2AB00BE0987 /* FarmerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarmerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185083FE2A03D2AB00BE0987 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				1871B0B82A0BDE1F00E6A9D0 /* RequestCreateViewController.swift */,
 				18CA070D2A15587300F85628 /* PDFViewController.swift */,
 				18CA07132A1FB75A00F85628 /* PDFLoggerViewController.swift */,
+				181B4EFB2A20F95400DB8703 /* LoggerViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				181E7F4E2A1405EE00F23326 /* PickerValues.swift in Sources */,
 				185084202A09818D00BE0987 /* FRequest.swift in Sources */,
 				185084012A03D2AB00BE0987 /* SceneDelegate.swift in Sources */,
+				181B4EFC2A20F95400DB8703 /* LoggerViewController.swift in Sources */,
 				18AED7332A0AEE3B0003EB2C /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
