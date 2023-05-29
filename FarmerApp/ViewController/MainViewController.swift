@@ -105,7 +105,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 100
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -124,7 +124,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         choosedRequest = requests[indexPath.row]
-
         }
     
     
@@ -320,13 +319,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         {
             
             self.performSegue(withIdentifier: "goToMyLog", sender: self)
-            
-            
-//            if let fileURL = PDFCreator.generatePDFFileURL(tmpString) {
-//                PDFCreator.openPDFLoggerHistory(at: fileURL, from: self, (myLogger?.getLogHistory())!)
-//            }
-            
-            
+        
         }
     }
         

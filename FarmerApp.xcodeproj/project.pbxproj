@@ -27,7 +27,6 @@
 		18CA070E2A15587300F85628 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA070D2A15587300F85628 /* PDFViewController.swift */; };
 		18CA07102A182BF500F85628 /* CertificateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA070F2A182BF500F85628 /* CertificateManager.swift */; };
 		18CA07122A1AA44A00F85628 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA07112A1AA44A00F85628 /* LogManager.swift */; };
-		18CA07142A1FB75A00F85628 /* PDFLoggerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA07132A1FB75A00F85628 /* PDFLoggerViewController.swift */; };
 		18E04BBF2A09A5D400571E31 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 18E04BBE2A09A5D400571E31 /* Podfile */; };
 		FEC55E1A5B82644E5B6AAF7F /* libPods-FarmerApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 786E279A511070DF3045B4C2 /* libPods-FarmerApp.a */; };
 /* End PBXBuildFile section */
@@ -55,7 +54,6 @@
 		18CA070D2A15587300F85628 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		18CA070F2A182BF500F85628 /* CertificateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateManager.swift; sourceTree = "<group>"; };
 		18CA07112A1AA44A00F85628 /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
-		18CA07132A1FB75A00F85628 /* PDFLoggerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFLoggerViewController.swift; sourceTree = "<group>"; };
 		18E04BBE2A09A5D400571E31 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		54E03859D99E1FF3B1B9E427 /* Pods-FarmerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FarmerApp.debug.xcconfig"; path = "Target Support Files/Pods-FarmerApp/Pods-FarmerApp.debug.xcconfig"; sourceTree = "<group>"; };
 		786E279A511070DF3045B4C2 /* libPods-FarmerApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FarmerApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,7 +125,6 @@
 				1871B0B62A0BBADD00E6A9D0 /* RegisterViewController.swift */,
 				1871B0B82A0BDE1F00E6A9D0 /* RequestCreateViewController.swift */,
 				18CA070D2A15587300F85628 /* PDFViewController.swift */,
-				18CA07132A1FB75A00F85628 /* PDFLoggerViewController.swift */,
 				181B4EFB2A20F95400DB8703 /* LoggerViewController.swift */,
 			);
 			path = ViewController;
@@ -279,7 +276,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1871B0B92A0BDE1F00E6A9D0 /* RequestCreateViewController.swift in Sources */,
-				18CA07142A1FB75A00F85628 /* PDFLoggerViewController.swift in Sources */,
 				1871B0B72A0BBADD00E6A9D0 /* RegisterViewController.swift in Sources */,
 				185084092A03D2AB00BE0987 /* FarmerApp.xcdatamodeld in Sources */,
 				18CA070E2A15587300F85628 /* PDFViewController.swift in Sources */,

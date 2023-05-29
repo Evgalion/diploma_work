@@ -49,12 +49,12 @@ struct PDFCreator {
     }
 
     // Редачим
-    static func openPDFLoggerHistory(at fileURL: URL, from viewController: UIViewController, _ log_data:String ) {
-        let documentViewController =  PDFLoggerViewController(url: fileURL, additionalData: log_data)
-        let navigationController = UINavigationController(rootViewController: documentViewController)
-        navigationController.modalPresentationStyle = .currentContext
-        viewController.present(navigationController, animated: true, completion: nil)
-    }
+//    static func openPDFLoggerHistory(at fileURL: URL, from viewController: UIViewController, _ log_data:String ) {
+//        let documentViewController =  PDFLoggerViewController(url: fileURL, additionalData: log_data)
+//        let navigationController = UINavigationController(rootViewController: documentViewController)
+//        navigationController.modalPresentationStyle = .currentContext
+//        viewController.present(navigationController, animated: true, completion: nil)
+//    }
 
 
 

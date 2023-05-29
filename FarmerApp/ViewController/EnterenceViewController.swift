@@ -105,8 +105,8 @@ class EnterenceViewController: UIViewController {
         {
             let MainVC:MainViewController = segue.destination as! MainViewController
             
-            MainVC.farmerID = farmers[0].id
-            MainVC.dbQueue = dbQueue
+                MainVC.farmerID = farmers[0].id
+                MainVC.dbQueue = dbQueue
         }
         if segue.identifier == "gotoRegister"
         {
