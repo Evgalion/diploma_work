@@ -32,6 +32,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     private var countFilter = 0
     
+    private var TradersCount: Int = 1
+    
     private var filters = ["Все","Подготовлен","Обрабатывается","Завершён"]
     
     override func viewDidLoad() {
@@ -58,6 +60,18 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Открываем лог файл.
         _ = getFarmer()
         myLogger = LogManager(MyFarmer!.phone_number)
+        
+        // Выполнение GET-запроса и получаем TradersCount
+//               getTradersCount { [weak self] result in
+//                   switch result {
+//                   case .success(let count):
+//                       self?.TradersCount = count
+//                       self?.myLogger?.log("Traders count: \(count)")
+//                   case .failure(let error):
+//                       self?.myLogger?.log("Failed to get traders count: \(error)")
+//                   }
+//               }
+        
     }
     
     @objc func handleDoubleTap(_ gestureRecognizer: UITapGestureRecognizer) {
@@ -79,11 +93,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
             }
         }
-    
-    
-    
-   
-    
     
     // MARK: Settings TableView
     
@@ -145,7 +154,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 let rows = try Row.fetchAll(db, sql: "SELECT * FROM Frequest where farmer_id = \(farmerID)")
                 
                 for row in rows {
-                    requests.append(Frequest(id: row[0], farmer_id: row[1], product: row[2], quality: row[3], weight: row[4],type_weight: row[5], price: row[6],type_price: row[7], date_created: row[8], status: row[9]))
+                    requests.append(Frequest(id: row[0], farmer_id: row[1], product: row[2], quality: row[3], weight: row[4],type_weight: row[5], price: row[6],type_price: row[7], date_created: row[8], status: row[9], Traderid : row[10]))
                 }
             }
             myLogger?.log("Загружаєм все предложения")
@@ -156,7 +165,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 let rows = try Row.fetchAll(db, sql: "SELECT * FROM Frequest where farmer_id = ? and status = ?",arguments: [farmerID,status])
                 
                 for row in rows {
-                    requests.append(Frequest(id: row[0], farmer_id: row[1], product: row[2], quality: row[3], weight: row[4],type_weight: row[5], price: row[6],type_price: row[7], date_created: row[8], status: row[9]))
+                    requests.append(Frequest(id: row[0], farmer_id: row[1], product: row[2], quality: row[3], weight: row[4],type_weight: row[5], price: row[6],type_price: row[7], date_created: row[8], status: row[9],Traderid: row[10]))
                 }
             }
             myLogger?.log("Загружаєм все предложения со статусом \(status)")
@@ -180,11 +189,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             ReqCreateVC.farmerID = farmerID
             ReqCreateVC.dbQueue = dbQueue
+            ReqCreateVC.TraderIDCount = TradersCount
         }
         else if segue.identifier == "goToMyLog"
         {
             let LogVC :LoggerViewController = segue.destination as! LoggerViewController
-            
             LogVC.log_data = myLogger?.getLogHistory()
             
         }
@@ -194,44 +203,51 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBAction func sendButtonPressed(_ sender: Any)
     {
-        
         sendDataToServer(selectedRequest: choosedRequest!)
-        
     }
     
     //Отправка запроса на сервис
     func sendDataToServer(selectedRequest: Frequest) {
         if(selectedRequest.status == filters[1])
         {
-            let url = URL(string: "https://example.com/api/data")!
-            myLogger?.log("Инициализируем наш api url = \(url)")
-            var request = URLRequest(url: url)
-            request.httpMethod = "PUT"
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            myLogger?.log("Cоздали запрос типа \(request.httpMethod)")
-            let jsonData = try? JSONEncoder().encode(["selectedRequest": selectedRequest])
-            
-            
-            request.httpBody = jsonData
-            
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                guard let data = data, let response = response as? HTTPURLResponse, error == nil else {
-                    print("Error: \(error?.localizedDescription ?? "Unknown error")")
-                    return
-                }
-               
-                self.updateRequestStatus(selectedRequest,status: self.filters[2])
-                
-                if response.statusCode == 200 {
-                    print("Data successfully sent to server")
-                    self.updateRequestStatus(selectedRequest,status: self.filters[3])
-                } else {
-                    print("Server error: \(response.statusCode)")
-                }
-                self.myLogger?.log("Спробывали отправить json. Ответ сервера = \(response.statusCode)")
+            guard let url = URL(string: "https://localhost:44345/api/UniversalAPIController/SendAPIJson") else {
+                return
             }
             
-            task.resume()
+            if(UIApplication.shared.canOpenURL(url))
+            {
+                myLogger?.log("Инициализируем наш api url = \(url)")
+                
+                var request = URLRequest(url: url)
+                request.httpMethod = "PUT"
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                
+                myLogger?.log("Cоздали запрос типа \(request.httpMethod)")
+                
+                let jsonData = try? JSONEncoder().encode(["selectedRequest": selectedRequest])
+                
+                
+                request.httpBody = jsonData
+                
+                let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                    guard let data = data, let response = response as? HTTPURLResponse, error == nil else {
+                        print("Error: \(error?.localizedDescription ?? "Unknown error")")
+                        return
+                    }
+                    
+                    self.updateRequestStatus(selectedRequest,status: self.filters[2])
+                    
+                    if response.statusCode == 200 {
+                        print("Data successfully sent to server")
+                        self.updateRequestStatus(selectedRequest,status: self.filters[3])
+                    } else {
+                        print("Server error: \(response.statusCode)")
+                    }
+                    self.myLogger?.log("Спробывали отправить json. Ответ сервера = \(response.statusCode)")
+                }
+                
+                task.resume()
+            }
         }
     }
     
@@ -322,6 +338,40 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         }
     }
-        
+    
+    
+    
+    func getTradersCount(completion: @escaping (Result<Int, Error>) -> Void) {
+            let urlString = "https://localhost:44345/api/UniversalAPIController/GetTradesID" // Замените на URL вашего сервера
+            
+            guard let url = URL(string: urlString) else {
+                completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
+                return
+            }
+            
+            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+                
+                guard let data = data else {
+                    completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data received"])))
+                    return
+                }
+                
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                    let count = json?["LastId"] as? Int ?? 0
+                    completion(.success(count))
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+            
+            task.resume()
+        }
+    
+    
 }
     

@@ -19,11 +19,12 @@ struct Frequest:Codable
     let type_price: String
     let date_created: String
     let status: String
+    let Traderid: Int
     
 
     func getInformation() -> String
     {
-        return "farmer_id: \(farmer_id), product: \(product), quality: \(quality),\n weight: \(weight), type_weight: \(type_weight),\n price: \(price), type_price: \(type_price),\n date_created: \(date_created), status: \(status)"
+        return "farmer_id: \(farmer_id), product: \(product), quality: \(quality),\n weight: \(weight), type_weight: \(type_weight),\n price: \(price), type_price: \(type_price),\n date_created: \(date_created), status: \(status), Traderid: \(Traderid)"
     }
     
     func getId() -> String {

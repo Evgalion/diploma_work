@@ -35,12 +35,22 @@ class RequestCreateViewController : UIViewController, UITextFieldDelegate
     
     @IBOutlet weak var priceTextField: UITextField!
     
+    
+    @IBOutlet weak var traiderIDLabel: UILabel!
+    
+    @IBOutlet weak var sliderTraderId: UISlider!
+    
     var farmerID:Int = 0
     var selectedTypeProduct:String?
     var selectedQuality:Int?
     var selectedStatus:String?
     var selectedTypeWeight: String?
     var selectedTypePrice: String?
+    
+    var TraderId:Int?
+    
+    
+    var TraderIDCount: Int?
     
     var currentDate:String?
     let formatter = DateFormatter()
@@ -54,6 +64,7 @@ class RequestCreateViewController : UIViewController, UITextFieldDelegate
     let values_status = PickerValues.values_status
     let values_type_weight = PickerValues.values_type_weight
     let values_type_price = PickerValues.values_type_price
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,8 +93,25 @@ class RequestCreateViewController : UIViewController, UITextFieldDelegate
         selectedTypeWeight = values_type_weight[0]
         selectedTypePrice = values_type_price[0]
         
+        sliderTraderId.maximumValue = Float(TraderIDCount!)
+        sliderTraderId.minimumValue = 0
+        
+        TraderId = TraderIDCount
         
     }
+    
+    
+    
+    @IBAction func changedTraderID(_ sender: UISlider) {
+        
+        TraderId = Int(sender.value)
+        traiderIDLabel.text = String(TraderId!)
+    }
+    
+    
+    
+    
+    
     
     @IBAction func addReqButtonPressed(_ sender: UIButton) {
         
@@ -96,12 +124,12 @@ class RequestCreateViewController : UIViewController, UITextFieldDelegate
             }
             else
             {
-                var newRequest: Frequest = Frequest(id: 0, farmer_id: farmerID, product: selectedTypeProduct!, quality: selectedQuality!, weight: Double(weightTextField.text!)!,type_weight: selectedTypeWeight! , price: Int(priceTextField.text!)!, type_price: selectedTypePrice!, date_created: currentDate!,status: selectedStatus!)
+                var newRequest: Frequest = Frequest(id: 0, farmer_id: farmerID, product: selectedTypeProduct!, quality: selectedQuality!, weight: Double(weightTextField.text!)!,type_weight: selectedTypeWeight! , price: Int(priceTextField.text!)!, type_price: selectedTypePrice!, date_created: currentDate!,status: selectedStatus!, Traderid: TraderId!)
                 
                 
                 do{
                     try dbQueue?.write { db in
-                        try db.execute(sql: "INSERT INTO FRequest (farmer_id, product, quality, weight,type_weight, price,type_price, date_created,status) VALUES (?,?,?,?,?,?,?,?,?)", arguments: [newRequest.farmer_id, newRequest.product, newRequest.quality, newRequest.weight, newRequest.type_weight, newRequest.price,  newRequest.type_price,newRequest.date_created,newRequest.status])
+                        try db.execute(sql: "INSERT INTO FRequest (farmer_id, product, quality, weight,type_weight, price,type_price, date_created,status,Traderid) VALUES (?,?,?,?,?,?,?,?,?,?)", arguments: [newRequest.farmer_id, newRequest.product, newRequest.quality, newRequest.weight, newRequest.type_weight, newRequest.price,  newRequest.type_price,newRequest.date_created,newRequest.status, newRequest.Traderid])
                     }
             }
                 catch {

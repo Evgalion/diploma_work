@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180412B12A31D21E002FF8AB /* CertificateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180412B02A31D21E002FF8AB /* CertificateManager.swift */; };
 		181B4EFC2A20F95400DB8703 /* LoggerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B4EFB2A20F95400DB8703 /* LoggerViewController.swift */; };
 		181E7F4E2A1405EE00F23326 /* PickerValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E7F4D2A1405EE00F23326 /* PickerValues.swift */; };
 		185083FF2A03D2AB00BE0987 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185083FE2A03D2AB00BE0987 /* AppDelegate.swift */; };
@@ -25,13 +26,13 @@
 		18AED7332A0AEE3B0003EB2C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AED7322A0AEE3B0003EB2C /* MainViewController.swift */; };
 		18CA070C2A1555FC00F85628 /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA070B2A1555FC00F85628 /* PDFCreator.swift */; };
 		18CA070E2A15587300F85628 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA070D2A15587300F85628 /* PDFViewController.swift */; };
-		18CA07102A182BF500F85628 /* CertificateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA070F2A182BF500F85628 /* CertificateManager.swift */; };
 		18CA07122A1AA44A00F85628 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CA07112A1AA44A00F85628 /* LogManager.swift */; };
 		18E04BBF2A09A5D400571E31 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 18E04BBE2A09A5D400571E31 /* Podfile */; };
 		FEC55E1A5B82644E5B6AAF7F /* libPods-FarmerApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 786E279A511070DF3045B4C2 /* libPods-FarmerApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180412B02A31D21E002FF8AB /* CertificateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateManager.swift; sourceTree = "<group>"; };
 		181B4EFB2A20F95400DB8703 /* LoggerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerViewController.swift; sourceTree = "<group>"; };
 		181E7F4D2A1405EE00F23326 /* PickerValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerValues.swift; sourceTree = "<group>"; };
 		185083FB2A03D2AB00BE0987 /* FarmerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarmerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,7 +53,6 @@
 		18AED7322A0AEE3B0003EB2C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		18CA070B2A1555FC00F85628 /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
 		18CA070D2A15587300F85628 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
-		18CA070F2A182BF500F85628 /* CertificateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateManager.swift; sourceTree = "<group>"; };
 		18CA07112A1AA44A00F85628 /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		18E04BBE2A09A5D400571E31 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		54E03859D99E1FF3B1B9E427 /* Pods-FarmerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FarmerApp.debug.xcconfig"; path = "Target Support Files/Pods-FarmerApp/Pods-FarmerApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,8 +137,8 @@
 				1850841F2A09818D00BE0987 /* FRequest.swift */,
 				181E7F4D2A1405EE00F23326 /* PickerValues.swift */,
 				18CA070B2A1555FC00F85628 /* PDFCreator.swift */,
-				18CA070F2A182BF500F85628 /* CertificateManager.swift */,
 				18CA07112A1AA44A00F85628 /* LogManager.swift */,
+				180412B02A31D21E002FF8AB /* CertificateManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,13 +276,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1871B0B92A0BDE1F00E6A9D0 /* RequestCreateViewController.swift in Sources */,
+				180412B12A31D21E002FF8AB /* CertificateManager.swift in Sources */,
 				1871B0B72A0BBADD00E6A9D0 /* RegisterViewController.swift in Sources */,
 				185084092A03D2AB00BE0987 /* FarmerApp.xcdatamodeld in Sources */,
 				18CA070E2A15587300F85628 /* PDFViewController.swift in Sources */,
 				18AED7312A0AE99D0003EB2C /* RequestTableViewCell.swift in Sources */,
 				185084032A03D2AB00BE0987 /* EnterenceViewController.swift in Sources */,
 				18CA07122A1AA44A00F85628 /* LogManager.swift in Sources */,
-				18CA07102A182BF500F85628 /* CertificateManager.swift in Sources */,
 				18CA070C2A1555FC00F85628 /* PDFCreator.swift in Sources */,
 				1850841E2A09817E00BE0987 /* Farmer.swift in Sources */,
 				185083FF2A03D2AB00BE0987 /* AppDelegate.swift in Sources */,

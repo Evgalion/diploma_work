@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -113,8 +113,8 @@
                                 <rect key="frame" x="-183" y="0.0" width="769" height="870"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="s3I-hE-bEU">
-                                <rect key="frame" x="10" y="0.0" width="373" height="782"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="s3I-hE-bEU">
+                                <rect key="frame" x="10" y="30" width="373" height="782"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cch-XS-csr">
                                         <rect key="frame" x="161.66666666666666" y="0.0" width="50" height="89"/>
@@ -504,13 +504,13 @@
                                 <rect key="frame" x="10" y="30" width="373" height="782"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6kH-RL-eRl">
-                                        <rect key="frame" x="25" y="0.0" width="323" height="123.66666666666667"/>
+                                        <rect key="frame" x="25" y="0.0" width="323" height="105"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Rbm-Td-m6Q">
-                                                <rect key="frame" x="0.0" y="0.0" width="151.66666666666666" height="123.66666666666667"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="151.66666666666666" height="105"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvx-9I-I9d">
-                                                        <rect key="frame" x="0.0" y="0.0" width="151.66666666666666" height="123.66666666666667"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="151.66666666666666" height="105"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="textColor" systemColor="systemRedColor"/>
                                                         <nil key="highlightedColor"/>
@@ -518,10 +518,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="THm-6Z-I0J">
-                                                <rect key="frame" x="171.66666666666663" y="0.0" width="151.33333333333337" height="123.66666666666667"/>
+                                                <rect key="frame" x="171.66666666666663" y="0.0" width="151.33333333333337" height="105"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заработок:" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zA-ts-1mK">
-                                                        <rect key="frame" x="0.0" y="0.0" width="151.33333333333334" height="123.66666666666667"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="151.33333333333334" height="105"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -531,76 +531,99 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Opd-Gw-Qag">
-                                        <rect key="frame" x="5" y="131.66666666666666" width="363" height="123.66666666666666"/>
+                                        <rect key="frame" x="5" y="113" width="363" height="104.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Продукция" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zd-Rg-sMp">
-                                                <rect key="frame" x="0.0" y="51.666666666666686" width="176.66666666666666" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="42" width="176.66666666666666" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxx-Xm-3bU">
-                                                <rect key="frame" x="186.66666666666663" y="0.0" width="176.33333333333337" height="123.66666666666667"/>
+                                                <rect key="frame" x="186.66666666666663" y="0.0" width="176.33333333333337" height="104.66666666666667"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="19O-A0-HD9">
-                                        <rect key="frame" x="5" y="263.33333333333331" width="363" height="123.66666666666669"/>
+                                        <rect key="frame" x="5" y="225.66666666666663" width="363" height="105"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Качество" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AqL-g3-qi9">
-                                                <rect key="frame" x="0.0" y="51.666666666666686" width="176.66666666666666" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="42.333333333333343" width="176.66666666666666" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anL-RM-A7W">
-                                                <rect key="frame" x="186.66666666666663" y="0.0" width="176.33333333333337" height="123.66666666666667"/>
+                                                <rect key="frame" x="186.66666666666663" y="0.0" width="176.33333333333337" height="105"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="o05-Qv-HjC">
-                                        <rect key="frame" x="5" y="395" width="363" height="123.66666666666663"/>
+                                        <rect key="frame" x="5" y="338.66666666666669" width="363" height="104.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вес" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thc-EU-vcI">
-                                                <rect key="frame" x="0.0" y="51.666666666666686" width="115.66666666666667" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="42.333333333333314" width="115.66666666666667" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ekc-7O-Qwf">
-                                                <rect key="frame" x="123.66666666666666" y="45" width="115.66666666666666" height="34"/>
+                                                <rect key="frame" x="123.66666666666666" y="35.333333333333314" width="115.66666666666666" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue"/>
                                             </textField>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EIJ-bx-BTA">
-                                                <rect key="frame" x="247.33333333333329" y="0.0" width="115.66666666666666" height="123.66666666666667"/>
+                                                <rect key="frame" x="247.33333333333329" y="0.0" width="115.66666666666666" height="104.66666666666667"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tK1-Q5-VhY">
-                                        <rect key="frame" x="5" y="526.66666666666663" width="363" height="123.66666666666663"/>
+                                        <rect key="frame" x="5" y="451.33333333333331" width="363" height="104.99999999999994"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цена" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ms-hI-U4L">
-                                                <rect key="frame" x="0.0" y="51.666666666666742" width="115.66666666666667" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="42.333333333333314" width="115.66666666666667" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HZm-Ce-45E">
-                                                <rect key="frame" x="123.66666666666666" y="45" width="115.66666666666666" height="34"/>
+                                                <rect key="frame" x="123.66666666666666" y="35.666666666666686" width="115.66666666666666" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue"/>
                                             </textField>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpi-rt-eDB">
-                                                <rect key="frame" x="247.33333333333329" y="0.0" width="115.66666666666666" height="123.66666666666667"/>
+                                                <rect key="frame" x="247.33333333333329" y="0.0" width="115.66666666666666" height="105"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="fY0-5V-rqi">
+                                        <rect key="frame" x="6.3333333333333428" y="564.33333333333337" width="360.33333333333326" height="104.66666666666663"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Трейдер под номером" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4a-AG-KOn">
+                                                <rect key="frame" x="0.0" y="44" width="152.33333333333334" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zB7-DA-GOe">
+                                                <rect key="frame" x="208.33333333333331" y="45.666666666666629" width="5.3333333333333428" height="13.333333333333336"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="IUA-yI-Ehe">
+                                                <rect key="frame" x="267.66666666666669" y="37.333333333333258" width="94.666666666666686" height="31"/>
+                                                <connections>
+                                                    <action selector="changedTraderID:" destination="RKm-F1-PrV" eventType="valueChanged" id="Wvc-WP-52y"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OHm-5J-mJz">
-                                        <rect key="frame" x="40" y="658.33333333333337" width="293" height="123.66666666666663"/>
+                                        <rect key="frame" x="40" y="677" width="293" height="105"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QcZ-mf-yqz">
-                                                <rect key="frame" x="0.0" y="36.666666666666629" width="293" height="50.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="27.333333333333375" width="293" height="50.333333333333343"/>
                                                 <color key="tintColor" red="0.50730592009999997" green="0.50619989629999995" blue="0.68237316609999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Создать" buttonSize="large">
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
@@ -643,6 +666,8 @@
                         <outlet property="priceTextField" destination="HZm-Ce-45E" id="gpb-2h-1gD"/>
                         <outlet property="priceTypeViewPicker" destination="xpi-rt-eDB" id="bPP-6h-aqQ"/>
                         <outlet property="qualityPickerView" destination="anL-RM-A7W" id="nIf-PV-Ke8"/>
+                        <outlet property="sliderTraderId" destination="IUA-yI-Ehe" id="DLe-E1-7pa"/>
+                        <outlet property="traiderIDLabel" destination="zB7-DA-GOe" id="GVK-7G-LTX"/>
                         <outlet property="typePickerView" destination="xxx-Xm-3bU" id="fNf-Qa-D8r"/>
                         <outlet property="weightTextField" destination="Ekc-7O-Qwf" id="ZxO-x2-M7x"/>
                         <outlet property="weightTypePickerVIew" destination="EIJ-bx-BTA" id="pxd-hI-F9o"/>

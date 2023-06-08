@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import PDFKit
+import TPPDF
 
 struct PDFCreator {
 
@@ -27,19 +28,7 @@ struct PDFCreator {
 
            return fileURL
        }
-    static func generatePDFFileURL( _ logname: String) -> URL? {
-
-        let fileName = "document_log_history_\(logname)" // Генерируем имя файла на основе индекса ячейки
-
-           // Получаем путь к директории документов в приложении
-           guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-               return nil
-           }
-           // Создаем полный URL-адрес файла с использованием директории документов и имени файла
-           let fileURL = documentsDirectory.appendingPathComponent(fileName).appendingPathExtension("pdf")
-
-           return fileURL
-       }
+    
 
     static func openPDFFile(at fileURL: URL, from viewController: UIViewController, _ data:Frequest, _ data_f:String) {
         let documentViewController = PDFViewController(url: fileURL,additionalData: data,creator_name: data_f )
@@ -48,13 +37,6 @@ struct PDFCreator {
         viewController.present(navigationController, animated: true, completion: nil)
     }
 
-    // Редачим
-//    static func openPDFLoggerHistory(at fileURL: URL, from viewController: UIViewController, _ log_data:String ) {
-//        let documentViewController =  PDFLoggerViewController(url: fileURL, additionalData: log_data)
-//        let navigationController = UINavigationController(rootViewController: documentViewController)
-//        navigationController.modalPresentationStyle = .currentContext
-//        viewController.present(navigationController, animated: true, completion: nil)
-//    }
 
 
 
@@ -124,42 +106,6 @@ struct PDFCreator {
     }
     
     
-//    func addBodyText(pageRect: CGRect, textTop: CGFloat) {
-//        let maxFontSize: CGFloat = 12.0
-//        var fontSize: CGFloat = maxFontSize
-//
-//        // 1
-//        let paragraphStyle = NSMutableParagraphStyle()
-//        paragraphStyle.alignment = .natural
-//        paragraphStyle.lineBreakMode = .byWordWrapping
-//
-//        // 2
-//        var textAttributes: [NSAttributedString.Key: Any] = [
-//            NSAttributedString.Key.paragraphStyle: paragraphStyle,
-//            NSAttributedString.Key.font: UIFont.systemFont(ofSize: fontSize, weight: .regular)
-//        ]
-//
-//        // 3
-//        var attributedText = NSAttributedString(string: body, attributes: textAttributes)
-//
-//        // 4
-//        var textRect = CGRect(x: 10, y: textTop, width: pageRect.width - 20, height: pageRect.height - textTop - pageRect.height / 5.0)
-//
-//        while attributedText.size().height > textRect.height && fontSize > 0 {
-//            // Уменьшаем размер шрифта и обновляем атрибуты текста
-//            fontSize -= 1.0
-//            textAttributes[NSAttributedString.Key.font] = UIFont.systemFont(ofSize: fontSize, weight: .regular)
-//            attributedText = NSAttributedString(string: body, attributes: textAttributes)
-//        }
-//
-//        // Перерассчитываем прямоугольник для масштабированного текста
-//        textRect = CGRect(x: 10, y: textTop, width: pageRect.width - 20, height: attributedText.size().height)
-//
-//        // Отрисовываем масштабированный текст
-//        attributedText.draw(in: textRect)
-//    }
-
-
 
     func getAttributedText() -> NSAttributedString
     {
